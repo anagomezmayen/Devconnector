@@ -7,5 +7,5 @@ Models for Perfil and Posts (tested on Postman)
 
 -Register and Login
 
-API for login, register, post.
+API for login, register, posts and perfil.
 
