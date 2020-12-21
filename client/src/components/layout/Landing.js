@@ -10,10 +10,10 @@ class Landing extends Component {
           <div className="col-md-12 text-center">
             <h1 className="display-3 mb-4">Developer Connector
             </h1>
-            <p className="lead"> Be free. Share your interest besides dev and meet real people from other developers</p>
+            <p className="lead"> Share your interests besides code</p>
             <hr />
-            <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
-            <Link to="/login" className="btn btn-lg btn-light">Login</Link>
+            <Link to="/register" className="btn btn-lg btn-primary btn-primary-spacing">Sign Up</Link>
+            <Link to="/login" className="btn btn-lg btn-light mr-2 btn-primary-spacing">Login</Link>
           </div>
         </div>
       </div>

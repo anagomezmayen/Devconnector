@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 img {
   width: 100%;
@@ -7,10 +7,10 @@ img {
 
 .landing {
   position: relative;
-  background: url("./img/showcase.jpg") no-repeat;
+  background: url("./img/trail.jpg") no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 90vh;
   margin-top: -24px;
   margin-bottom: -50px;
 }
@@ -20,7 +20,7 @@ img {
 }
 
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.15);
   position: absolute;
   top: 0;
   left: 0;
@@ -40,3 +40,20 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+.form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* BUTTONS */
+
+.btn.btn-lg {
+  font-size: 20px;
+}
+
+.btn-primary-spacing {
+  margin-right: 60px;
+  margin-bottom: 10px !important;
+}
+
