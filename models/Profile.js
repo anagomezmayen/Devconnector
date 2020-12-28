@@ -24,17 +24,14 @@ const ProfileSchema = new Schema({
     type: [String],
     required: true
   },
-  followers: [ // followers
-    {
-      user:{
-      type: Schema.Types.ObjectId,
-      ref:'users',
-      }
-    }
-  ],
-  bio: {
-    type: String
-  },
+  // followers: [ // followers
+  //   {
+  //     user:{
+  //     type: Schema.Types.ObjectId,
+  //     ref:'users',
+  //     }
+  //   }
+  // ],
     social: {
     youtube: {
       type: String
