@@ -11,9 +11,6 @@ const ProfileSchema = new Schema({
     required: true,
     max: 40
   },
-  bio: {
-    type: String
-  },
   website: {
     type: String
   },
@@ -32,6 +29,9 @@ const ProfileSchema = new Schema({
   //     }
   //   }
   // ],
+   bio: {
+    type: String
+  },
     social: {
     youtube: {
       type: String
