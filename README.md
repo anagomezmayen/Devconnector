@@ -2,11 +2,12 @@
 
 Social Network for developers (Instagram)
 
+Requirements
+- Using Gravatar for avatar pictures
 
-# Requirements
-Using Gravatar for avatar pictures
-MongoDB for save data collections
+- MongoDB for save data collections
 
-# Video 
+Video 
+
 https://youtu.be/Glq5B-HxvtA
 
