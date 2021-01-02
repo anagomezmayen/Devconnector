@@ -7,6 +7,8 @@ const path = require('path');
 const users = require('./routes/api/users');
 //Bring profiles
 const profile = require('./routes/api/profile');
+//Bring posts
+const posts = require('./routes/api/post');
 
 const app = express();
 
@@ -20,11 +22,7 @@ app.use(bodyparser.json());
 app.get('/', (req,res) => res.send('Hello world '));
 app.use('/api/users', users);
 app.use('/api/profile', profile);
-
-
-
-
-
+app.use('/api/posts', posts);
 
 //Db Config
 const db = require('./config/keys').mongoURI;

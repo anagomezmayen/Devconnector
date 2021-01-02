@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { addPost } from '../../actions/postActions';
 
@@ -9,6 +10,7 @@ class PostForm extends Component {
     super(props);
     this.state = {
       text: '',
+      pictureURL:'',
       errors: {}
     };
 
@@ -29,6 +31,7 @@ class PostForm extends Component {
 
     const newPost = {
       text: this.state.text,
+      pictureURL: this.state.pictureURL,
       name: user.name,
       avatar: user.avatar
     };
@@ -50,6 +53,15 @@ class PostForm extends Component {
           <div className="card-header bg-info text-white">Say Something...</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <TextFieldGroup
+                  placeholder="Write the URL of yout pic"
+                  name="pictureURL"
+                  value={this.state.pictureURL}
+                  onChange={this.onChange}
+                  error={errors.text}
+                />
+              </div>
               <div className="form-group">
                 <TextAreaFieldGroup
                   placeholder="Create a post"

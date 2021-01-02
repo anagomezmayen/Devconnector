@@ -17,6 +17,7 @@ class CreateProfile extends Component {
       website: '',
       location: '',
       hobbies: '',
+      skills: '',
       //followers: '',
       youtube: '',
       twitter: '',
@@ -43,6 +44,7 @@ class CreateProfile extends Component {
       website: this.state.website,
       location: this.state.location,
       hobbies: this.state.hobbies,
+      skills: this.state.skills,
       //followers: this.state.followers,
       youtube: this.state.youtube,
       twitter: this.state.twitter,
@@ -133,7 +135,16 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.hobbies}
                   info="Please use comma separated values (eg.
-                    art,photo,haking,sports"
+                    art,photo,haking,sports)"
+                />
+                 <TextFieldGroup
+                  placeholder="* Skills"
+                  name="skills"
+                  value={this.state.skills}
+                  onChange={this.onChange}
+                  error={errors.skills}
+                  info="Please use comma separated values (eg.
+                    Python, C#, Java, etc.)"
                 />
                
                 <TextAreaFieldGroup

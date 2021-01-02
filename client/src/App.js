@@ -23,6 +23,7 @@ import Profile from './components/profile/Profile';
 import Profiles from "./components/profiles/Profiles";
 import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
+import AddExperience from "./components/add-experience/AddExperience";
 //import NotFound from "./components/not-found/NotFound";
 
 if(localStorage.jwtToken){
@@ -77,6 +78,13 @@ class App extends Component {
                   exact
                   path="/edit-profile"
                   component={EditProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-experience"
+                  component={AddExperience}
                 />
               </Switch>
               <Switch>

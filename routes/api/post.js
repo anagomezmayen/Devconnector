@@ -10,7 +10,7 @@ const Profile = require('../../models/Profile');
 
 // Validation
 const validatePostInput = require('../../validation/post');
-// @route   GET api/posts
+// @route   GET api/post
 // @desc    Get posts
 // @access  Public
 router.get('/', (req, res) => {
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
 });
 
-// @route   GET api/posts/:id
+// @route   GET api/post/:id
 // @desc    Get post by id
 // @access  Public
 router.get('/:id', (req, res) => {
@@ -49,6 +49,7 @@ router.post(
     const newPost = new Post({
       text: req.body.text,
       name: req.body.name,
+      pictureURL: req.body.pictureURL,
       avatar: req.body.avatar,
       user: req.user.id
     });
@@ -57,7 +58,7 @@ router.post(
   }
 );
 
-// @route   DELETE api/posts/:id
+// @route   DELETE api/post/:id
 // @desc    Delete post
 // @access  Private
 router.delete(
@@ -82,7 +83,7 @@ router.delete(
   }
 );
 
-// @route   POST api/posts/like/:id
+// @route   POST api/post/like/:id
 // @desc    Like post
 // @access  Private
 router.post(
@@ -112,7 +113,7 @@ router.post(
 );
 
 
-// @route   POST api/posts/unlike/:id
+// @route   POST api/post/unlike/:id
 // @desc    Unlike post
 // @access  Private
 router.post(
@@ -147,7 +148,7 @@ router.post(
   }
 );
 
-// @route   POST api/posts/comment/:id
+// @route   POST api/post/comment/:id
 // @desc    Add comment to post
 // @access  Private
 router.post(
@@ -181,7 +182,7 @@ router.post(
   }
 );
 
-// @route   DELETE api/posts/comment/:id/:comment_id
+// @route   DELETE api/post/comment/:id/:comment_id
 // @desc    Remove comment from post
 // @access  Private
 router.delete(

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
-import SelectListGroup from '../common/SelectListGroup';
 import { createProfile, getCurrentProfile } from '../../actions/profileActions';
 import isEmpty from '../../validation/is-empty';
 
@@ -20,6 +19,7 @@ class CreateProfile extends Component {
       website: '',
       location: '',
       hobbies: '',
+      skills: '',
       //followers: '',
       youtube: '',
       twitter: '',
@@ -43,7 +43,8 @@ class CreateProfile extends Component {
     if (nextProps.profile.profile) {
       const profile = nextProps.profile.profile;
 
-      // Bring skills array back to CSV
+      // Bring skills and hobbies arrays back to CSV
+      const skillsCSV = profile.skills.join(',');
       const hobbiesCSV = profile.hobbies.join(',');
 
       // If profile field doesnt exist, make empty string
@@ -70,6 +71,7 @@ class CreateProfile extends Component {
       website: profile.website,
       location: profile.location,
       hobbies: hobbiesCSV,
+      skills: skillsCSV,
       youtube: profile.youtube,
       twitter: profile.twitter,
       facebook: profile.facebook
@@ -87,6 +89,7 @@ class CreateProfile extends Component {
       website: this.state.website,
       location: this.state.location,
       hobbies: this.state.hobbies,
+      skills: this.state.skills,
       //followers: this.state.followers,
       youtube: this.state.youtube,
       twitter: this.state.twitter,
@@ -179,7 +182,16 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.hobbies}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                    read, photography, etc.)"
+                />
+                <TextFieldGroup
+                  placeholder="* Skills"
+                  name="skills"
+                  value={this.state.skills}
+                  onChange={this.onChange}
+                  error={errors.skills}
+                  info="Please use comma separated values (eg.
+                    HTML,CSS,JavaScript,PHP)"
                 />
                 <TextAreaFieldGroup
                   placeholder="Short Bio"

@@ -12,7 +12,7 @@ class ProfileAbout extends Component {
     // Skill List
     const skills = profile.hobbies.map((hobby, index) => (
       <div key={index} className="p-3">
-        <i className="fa fa-check" /> {hobby}
+        <i className="fa fa-heart" /> {hobby}
       </div>
     ));
 

@@ -10,17 +10,14 @@ class ProfileItem extends Component {
     return (
       <div className="card card-body bg-light mb-3">
         <div className="row">
-          <div className="col-2">
-            <img src={profile.user.avatar} alt="" className="rounded-circle" />
+          <div className="col">
+            
+            <img src={profile.user.avatar} 
+            alt="" className="rounded-circle" 
+            style ={{width:"130px", marginRight:"5px"}}/>
           </div>
-          <div className="col-lg-6 col-md-4 col-8">
+          <div className="col">
             <h3>{profile.user.name}</h3>
-            <p>
-              {profile.status}{' '}
-              {isEmpty(profile.company) ? null : (
-                <span>at {profile.company}</span>
-              )}
-            </p>
             <p>
               {isEmpty(profile.location) ? null : (
                 <span>{profile.location}</span>
@@ -31,11 +28,22 @@ class ProfileItem extends Component {
             </Link>
           </div>
           <div className="col-md-4 d-none d-md-block">
+            <h4>Skills</h4>
+            <ul className="list-group">
+              {profile.skills.slice(0, 4).map((skill, index) => (
+                <li key={index} className="list-group-item">
+                  <i className="fa fa-check pr-1" />&nbsp;&nbsp;
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="col-md-4 d-none d-md-block">
             <h4>Hobbies Set</h4>
             <ul className="list-group">
               {profile.hobbies.slice(0, 4).map((hobby, index) => (
                 <li key={index} className="list-group-item">
-                  <i className="fa fa-check pr-1" />
+                  <i className="fa fa-heart pr-1" />&nbsp;&nbsp;
                   {hobby}
                 </li>
               ))}
