@@ -2,11 +2,11 @@
 
 Social Network for developers (Instagram)
 
-Models and routes for user (tested on Postman)
 
-Models for Perfil and Posts (tested on Postman)
+# Requirements
+Using Gravatar for avatar pictures
+MongoDB for save data collections
 
--Register and Login
-
-API for login, register, posts and perfil.
+# Video 
+https://youtu.be/Glq5B-HxvtA
 
